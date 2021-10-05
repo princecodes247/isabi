@@ -299,6 +299,10 @@ h6 {
 
 .courses {
     margin-top: 80px;
+    display: flex;
+    gap: 20px;
+    // max-width: 100vw;
+    // overflow: scroll;
 }
 
 .course {
