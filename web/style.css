@@ -1,0 +1,166 @@
+body{
+
+    width:auto;
+    background: #372e29;
+    font-family: Arial, sans_serif;
+    color: white;
+    font-size: 15px;
+
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+
+button{
+    background-color: #0272fc;
+    color: white;
+    border-radius: .5em;
+    
+}
+
+.container {
+    padding: 35px;
+    
+    height: 5px;
+    width: auto;
+
+    padding-top:20px;
+    padding-left:15px;
+    padding-right:15px;
+    
+    
+    
+    align-items: center;
+    justify-content: space-between;
+        
+}
+
+
+.container button{
+    float: right;
+    
+    
+    padding: .6em 1.3em;
+    width: 25%;
+    
+}
+
+.container a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    float:left;
+    font: size 12px;
+    display:flexbox;
+    width: 20%;
+}
+.container ul {
+    font-size: 12px;
+    float: left;
+    align-items: center;
+    width: 55%;
+    color: white;
+    cursor: pointer;    
+}
+
+.container ul li{
+
+    text-decoration: none;
+    display: inline-flex;
+    max-width:inherit;
+    margin-top: 5px;
+    
+}
+
+.hero{
+    font-size:10px ;
+    
+    padding: 1em 0 1em 2em;
+    text-align: left;  
+     
+   
+}
+
+.hero h1{
+    font-size: 18px;
+}
+.hero h1 span{
+    color: #106fdd;
+}
+.hero p{
+    font-size: 12px;
+    word-spacing: 3px;
+}
+.hero button{
+    padding: .6em 1.3em;
+}
+
+.hero div ul{
+    margin-top: 1px;
+
+}
+.hero div ul li{
+    
+    display: inline;
+}
+
+
+.sndsection{
+    padding: .1em 0 0 2em;
+    font-size:5px ;
+}
+.sndsection h1{
+    font-size: 15px;
+}
+.sndsection p{
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 12px;
+    word-spacing: 3px;
+}
+
+.sndsection button{
+    padding: .6em 1.3em;
+}
+
+.sndsection div ul li{
+    padding: 0 15px 0 0;
+    display:inline-block;
+}
+
+.trdsection {
+    padding: .1em 0 0 2em;
+    font-size:10px ;
+
+    
+    
+    text-align: center;
+    
+}
+
+.trdsection a{
+    font-size: 15px;    
+}
+
+.trdsection div ul li{
+    display: inline-block;
+    
+}
+
+.frthsection{
+    text-align: center;
+}
+.frthsection div ul li{
+    font-size:10px ;
+    display: inline-block;
+    
+}
+
+
+
+
+
+
