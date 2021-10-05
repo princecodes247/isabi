@@ -621,7 +621,7 @@ footer {
     height: 100vh;
     gap: 3em;
     position: relative;
-    background: url("./img/img1.jpg") scroll #0009;
+    background: url("./img/img1.jpg") fixed #0009;
     background-size: cover;
     
     &__text {
