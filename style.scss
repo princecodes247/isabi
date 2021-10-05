@@ -20,7 +20,7 @@ $color--comp2: #3e3;
 $color--comp3: #3e3;
 
 // NAVBAR VARIABLES
-$nav__color: #777777;
+$nav__color: $color--sec1;
 $nav__height: 14vh;
 
 $bg__color: $color--sec1;
@@ -95,6 +95,7 @@ h6 {
     padding: 0 8%;
     height: $nav__height;
     z-index: 10;
+    transition: 300ms;
     nav {
         display: flex;
         align-items: center;
@@ -113,20 +114,26 @@ h6 {
             background: none;
             border: 1px solid transparent;
             border-bottom: 1px solid #fff;
+            color: #fff;
+            outline: none;
         }
         button {
             position: relative;
             z-index: 2;
             background: none;
             border: 1px solid transparent;
+            color: #fff;
         }
-        &:hover {
+        &:hover, &:focus-within, & {
             input {
+                transform: translate(0);
+            }
+            input:valid {
                 transform: translate(0);
             }
         }
         input {
-            transform: translate(100%);
+            transform: translate(120%);
         }
     }
     &__links {
@@ -138,7 +145,7 @@ h6 {
     }
 
 
-    --small {
+    &--small {
         height: 8vh;
         background-color: $nav__color;
     }
@@ -208,7 +215,7 @@ h6 {
     }
     &__image {
         
-        background-color: aqua;
+        background-color: $color--prim1;
         height: 80vh;
         border-radius: 0 0 500px 500px;
         width: 50%;
