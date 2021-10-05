@@ -101,16 +101,24 @@ h6 {
         gap: 40px;
         
     }
+    &__ham {
+        display: none;
+    }
     &__search {
         overflow: hidden;
         input {
             position: relative;
             transition: 700ms;
             z-index: 0;
+            background: none;
+            border: 1px solid transparent;
+            border-bottom: 1px solid #fff;
         }
         button {
             position: relative;
             z-index: 2;
+            background: none;
+            border: 1px solid transparent;
         }
         &:hover {
             input {
@@ -126,6 +134,7 @@ h6 {
         list-style: none;
         cursor: pointer;
         gap: 30px;
+     
     }
 
 
@@ -234,6 +243,16 @@ h6 {
     border: 2px solid $color--prim1;
     background-color: $color--prim1;
     transition: 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
+    &--alt {
+        border: 2px solid $color--sec1;
+    background-color: $color--sec1;
+    position: relative;
+    z-index: 2;
+    }
+    &--trans {
+        background: transparent;
+        border: none;
+    }
     &:hover {
         background-color: #fff;
         border: 2px solid #fff;
@@ -384,6 +403,10 @@ footer {
         gap: 10px;
         li {
             cursor: pointer;
+            transition: 200ms;
+            &:hover {
+                color: $color--prim1;
+            }
         }
     }
 }
@@ -430,19 +453,49 @@ footer {
     padding: 0 8%;
     height: 10vh;
     z-index: 10;
-    &:hover {
-        nav {
+    
+        nav.open {
             transform: scaleY(1);
         }
-    }
+        &__ham {
+            // display: block;
+            position: relative;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 20px;
+            gap: 5px;
+            transition: 300ms;
+            span {
+                height: 1px;
+                background-color: #fff;
+                transition: 300ms;
+                width: 100%;
+            }
+            &.open {
+                position: fixed;
+                right: 7%;
+                width: 15px;
+                
+                span {
+                    height: 2px;
+                    transform: rotate(45deg);
+                    transform-origin: left;
+                    &:last-child {
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
     nav {
         transition: 500ms;
         transform: scaleY(0);
         transform-origin: top;
-        position: absolute;
+        position: fixed;
         height: 100vh;
         width: 100vw;
-        background: $color--prim1;
+        background: $color--sec1;
         top: 0;
         left: 0;
         display: flex;
@@ -466,6 +519,11 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    &__link{
+        &:hover {
+            border-bottom: 1px solid #fff;
+        }
     }
 
 
@@ -491,7 +549,7 @@ footer {
 .sect {
     position: relative;
     min-height: 40vh;
-    padding: 20px 20px;
+    padding: 30px 20px;
     max-width: 100vw;
     overflow: hidden;
     &__heading {
@@ -536,7 +594,7 @@ footer {
         display: flex;
         flex-direction: column;
         margin: 0;
-        padding: 5%;
+        padding: 40px 8%;
 
         min-height: 80vh;
         border-radius: 0;
@@ -668,9 +726,18 @@ footer {
 }
 
 footer {
-    display: none;
+    // display: none;
 }
 
+}
+
+@media screen and (min-width: 768px){
+    .navbar__link {
+        transition: 200ms;
+        &:hover {
+            color: $color--prim1;
+        }
+    }
 }
 
 // @media screen and (max-width: 600px) {
