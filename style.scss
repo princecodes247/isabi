@@ -123,6 +123,11 @@ h6 {
             background: none;
             border: 1px solid transparent;
             color: #fff;
+            border-radius: 0 10px 10px 0;
+            padding: 10px;
+            &:active {
+                background-color: #cccc;
+            }
         }
         &:hover, &:focus-within, & {
             input {
@@ -134,6 +139,9 @@ h6 {
         }
         input {
             transform: translate(120%);
+            &:focus {
+                border-bottom-color: $color--prim1;
+            }
         }
     }
     &__links {
@@ -172,6 +180,7 @@ h6 {
     &__image {
         width: 600px;
         height: 400px;
+      
     }
     &__desc {
         text-align: justify;
@@ -190,6 +199,7 @@ h6 {
         margin: 20vh 0;
         padding: 5%;
         min-height: 80vh;
+        justify-content: space-between;
         border-radius: 0 300px 300px 0;
         background-color: $color--prim1;
     }
@@ -220,17 +230,16 @@ h6 {
         border-radius: 0 0 500px 500px;
         width: 50%;
         overflow: hidden;
-        img {
-            height: 100%;
-        }
+        position: relative;
     }
     &__img {
         &_bg {
             &--right {
-                
+                height: 100%;
                 width: 100%;
                 position: relative;
                 top: -160px;
+                
             }
         }
     }
@@ -250,11 +259,23 @@ h6 {
     border: 2px solid $color--prim1;
     background-color: $color--prim1;
     transition: 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
+    &__icon {
+        flex: 1;
+    }
+    &__text {
+        flex: 3;
+    }
     &--alt {
+        display: flex;
+        align-items: center;
+        width: 11em;
+        font-size: 0.7em;
         border: 2px solid $color--sec1;
     background-color: $color--sec1;
+    border-radius: 0;
     position: relative;
     z-index: 2;
+
     }
     &--trans {
         background: transparent;
@@ -318,6 +339,9 @@ h6 {
     list-style: none;
     text-align: center;
     li {
+        &:hover {
+            color: $color--prim1;
+        }
         cursor: pointer;
     }
     }
@@ -420,12 +444,22 @@ footer {
 
 .float--up {
     transition: 800ms;
-    
+    img {
+        transform: translateY(0px);
+        transition: 400ms;
+        animation: hover 800ms infinite alternate both;
+    }
     &:hover {
         transform: translateY(-20px);
-        img {
-            animation: hover 800ms infinite alternate;
-        }
+        // img {
+        //     animation: hover 800ms infinite alternate both;
+        // }
+    }
+}
+
+@keyframes hover-down {
+    to {
+        transform: translateY(200px);
     }
 }
 
@@ -433,14 +467,14 @@ footer {
     to {
         transform: translateY(-20px);
     }
-    from {
-        transform: translateY(0px);
-    }
+    // from {
+    //     transform: translateY(0px);
+    // }
 }
 
 
 
-
+// TODO
 
 
 
@@ -455,7 +489,7 @@ footer {
         line-height: 1em;
     }
 .navbar {
-    position: relative;
+    // position: relative;
    
     padding: 0 8%;
     height: 10vh;
@@ -475,7 +509,7 @@ footer {
             gap: 5px;
             transition: 300ms;
             span {
-                height: 1px;
+                height: 2px;
                 background-color: #fff;
                 transition: 300ms;
                 width: 100%;
@@ -577,6 +611,19 @@ footer {
         margin-top: 10px;
         width: 300px;
         height: auto;
+        position: relative;
+        &::before {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 50%;
+            height: 30%;
+            content: "";
+            background-color: #000900;
+            transform: translate(-50%) rotate(-40deg) skew(20deg);
+            filter: blur(30px);
+            
+        }
     }
     &__img {
         &_bg {
@@ -584,7 +631,7 @@ footer {
                 
                 width: 100%;
                 position: relative;
-                top: 10px;
+                top: 40px;
             }
         }
     }
@@ -602,7 +649,6 @@ footer {
         flex-direction: column;
         margin: 0;
         padding: 40px 8%;
-
         min-height: 80vh;
         border-radius: 0;
         background: $color--prim1;
