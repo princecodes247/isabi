@@ -84,11 +84,17 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 8%;
+  padding: 0 4% 0 8%;
   height: 14vh;
   z-index: 10;
   -webkit-transition: 300ms;
   transition: 300ms;
+}
+
+.navbar__logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .navbar nav {
@@ -98,7 +104,26 @@ h6 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   gap: 40px;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+
+.navbar nav > div.first {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 40px;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
 }
 
 .navbar__ham {
@@ -106,7 +131,12 @@ h6 {
 }
 
 .navbar__search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   overflow: hidden;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .navbar__search input {
@@ -119,6 +149,12 @@ h6 {
   border-bottom: 1px solid #fff;
   color: #fff;
   outline: none;
+  -webkit-transform: translate(120%, -10px);
+          transform: translate(120%, -10px);
+}
+
+.navbar__search input:focus {
+  border-bottom-color: #2a68c6;
 }
 
 .navbar__search button {
@@ -135,29 +171,23 @@ h6 {
   background-color: #cccc;
 }
 
-.navbar__search:hover input, .navbar__search:focus-within input, .navbar__search input {
-  -webkit-transform: translate(0);
-          transform: translate(0);
+.navbar__search:hover input, .navbar__search:focus-within input {
+  -webkit-transform: translate(0, -10px);
+          transform: translate(0, -10px);
 }
 
-.navbar__search:hover input:valid, .navbar__search:focus-within input:valid, .navbar__search input:valid {
-  -webkit-transform: translate(0);
-          transform: translate(0);
-}
-
-.navbar__search input {
-  -webkit-transform: translate(120%);
-          transform: translate(120%);
-}
-
-.navbar__search input:focus {
-  border-bottom-color: #2a68c6;
+.navbar__search:hover input:valid, .navbar__search:focus-within input:valid {
+  -webkit-transform: translate(0, -10px);
+          transform: translate(0, -10px);
 }
 
 .navbar__links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   list-style: none;
   cursor: pointer;
   gap: 30px;
@@ -197,6 +227,8 @@ h6 {
 .sect__image {
   width: 600px;
   height: 400px;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .sect__desc {
@@ -216,14 +248,17 @@ h6 {
 }
 
 .sect--prim {
+  max-width: 95vw;
   margin: 20vh 0;
   padding: 5%;
-  min-height: 80vh;
+  min-height: 8em;
+  height: 70vh;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-radius: 0 300px 300px 0;
   background-color: #2a68c6;
+  overflow: visible;
 }
 
 .hero {
@@ -251,24 +286,35 @@ h6 {
   padding: 10% 0;
 }
 
+.hero__text > * {
+  margin-bottom: 10px;
+}
+
 .hero__image {
   background-color: #2a68c6;
   height: 80vh;
   border-radius: 0 0 500px 500px;
-  width: 50%;
+  width: 45%;
+  max-width: 1100px;
   overflow: hidden;
   position: relative;
 }
 
 .hero__img_bg--right {
   height: 100%;
-  width: 100%;
   position: relative;
-  top: -160px;
 }
 
 .hero__social_ctas svg {
   height: 20px;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
+.hero__social_ctas svg:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  color: #2a68c6;
 }
 
 .btn {
@@ -367,12 +413,13 @@ h6 {
 
 .logo__image {
   width: 100%;
-  -webkit-filter: grayscale(100%) brightness(1097%) contrast(0%) opacity(36%);
-          filter: grayscale(100%) brightness(1097%) contrast(0%) opacity(36%);
+  -webkit-filter: invert(1) grayscale(100%) brightness(1060%) contrast(100%) opacity(10%);
+          filter: invert(1) grayscale(100%) brightness(1060%) contrast(100%) opacity(10%);
 }
 
-.nav {
-  padding: 20px 0;
+.subnav {
+  margin-top: 20px;
+  padding: 10px 0;
   width: 100%;
   text-align: center;
   display: -webkit-box;
@@ -386,7 +433,8 @@ h6 {
           justify-content: center;
 }
 
-.nav ul {
+.subnav ul {
+  height: 3em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -395,31 +443,50 @@ h6 {
           justify-content: space-evenly;
   font-size: 0.9em;
   width: 120%;
-  gap: 40px;
+  gap: 10px;
   list-style: none;
   text-align: center;
 }
 
-.nav ul li {
+.subnav ul li {
   cursor: pointer;
+  -webkit-transition: 50ms;
+  transition: 50ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 10px;
 }
 
-.nav ul li:hover {
+.subnav ul li:hover {
   color: #2a68c6;
+  background-color: rgba(34, 34, 34, 0.5);
 }
 
 .courses {
   margin-top: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   gap: 20px;
+  max-width: 200vw;
+  overflow: scroll;
 }
 
 .course {
   position: relative;
   height: 350px;
-  width: 30%;
+  min-width: 20em;
+  width: 20em;
   border-radius: 10px;
   background-color: #222;
   display: -webkit-box;
@@ -791,6 +858,8 @@ footer ul li:hover {
     background: #2a68c6;
     background-blend-mode: darken;
     background-size: 100%;
+    overflow: visible;
+    margin-bottom: 100px;
   }
   .hero {
     display: -webkit-box;
@@ -802,7 +871,7 @@ footer ul li:hover {
     height: 100vh;
     gap: 3em;
     position: relative;
-    background: url("./img/img1.jpg") fixed #0009;
+    background: url("./img/img1.jpg") scroll #0009;
     background-size: cover;
   }
   .hero__text {
