@@ -207,9 +207,11 @@ h6 {
         height: 40vh;
     }
     &__image {
-        width: 600px;
-        height: 400px;
+       img {
+        width: 700px;
+        height: auto;
         transform: scale(1.1);
+       }
     }
     &__desc {
         text-align: justify;
@@ -303,6 +305,19 @@ h6 {
     transition: 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
     &__icon {
         flex: 1;
+        width: 20px;
+        overflow: hidden;
+        img {
+            height: 20px;
+            width: 20px;
+            &.play {
+                transform: translateX(-10px);
+                width: 100px;
+            }
+            &.apple {
+                filter: invert(1);
+            }
+        }
     }
     &__text {
         flex: 3;
@@ -327,6 +342,9 @@ h6 {
         background-color: #fff;
         border: 2px solid #fff;
         color: #000;
+        .apple {
+            filter: invert(0);
+        }
     }
 }
 
@@ -775,10 +793,14 @@ footer {
         height: 40vh;
     }
     &__image {
-        margin-top: 10px;
-        width: 300px;
+        margin-top: 20px;
+        
+        width: 400px;
         height: auto;
         position: relative;
+        img {
+            width: 400px;
+        }
         &::before {
             position: absolute;
             bottom: 0;
@@ -822,7 +844,7 @@ footer {
         background-blend-mode: darken;
         background-size: 100%;
         overflow: visible;
-        margin-bottom: 100px;
+        margin-bottom: 200px;
     }
 }
 // MOBILE
